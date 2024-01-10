@@ -1,6 +1,6 @@
 # DDSR 
 
-Here we only consider as exemple the 1CSL.pdb file. 
+Concerning the output file that shows some exemples of results, we only consider as exemple the 1CSL.pdb file. 
 
 1/ Download the [dssr](https://github.com/EvryRNA/rna_angles_prediction_dssr/tree/main) folder from the github link + download the pdb file on the RCSB PDB database. 
 
