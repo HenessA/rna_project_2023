@@ -19,7 +19,9 @@
  ```markdown
   $ for i in $(cat ../train-list-pdb.txt); do awk -F',' '{print $13 "\t" $15 "\t" $17}' $i-res.txt > $i-all_eta.txt;done;
   ```
-6/ Distribution
+6/ Concatenation of all the etha value to vizualize the distribution in R with the script  `train_make_file_all_eta.py`
+
+7/ Distribution
 
 
 
