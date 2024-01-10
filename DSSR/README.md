@@ -13,8 +13,11 @@ Concerning the output file that shows some exemples of results, we only consider
   ```
 
 
-4/ Launch the `train_dssr_calcul.py` then `test_dssr_calcul.py` to get the real values of all the angles calculated by the DSSR script, here those script automatize the calculation for all the pdb file in training and test set. 
+4/ Launch the `train_dssr_calcul.py` then `test_dssr_calcul.py` to get the real values of all the angles calculated by the DSSR script, here those script automatize the calculation for all the pdb file in training and test set, using this command : 
 
+```markdown
+python -m src.dssr_wrapper --input_path /path/to/the/folder/containing/pdb/file --output_path path/to/the/folder/of/your/choice/as/output --to_csv\
+```
 5/ Extraction of the pseudo torsion angles (eta, eta',eta'') to make the histogram of the distribution (on RStudio) using the following awk command line with the file train-list-pdb.txt (file with all the pdb names):
 
  ```markdown
