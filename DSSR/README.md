@@ -14,7 +14,12 @@
 
 4/ Launch the  `train_dssr_calcul.py` then `test_dssr_calcul.py`
 
-5/ Extraction of the angles to make the distribution
+5/ Extraction of the seudo torsion angles (eta, eta',eta'') to make the distribution using the following awk command line with the file train-list-pdb.txt (file with all the pdb names)
+
+ ```markdown
+  $ for i in $(cat ../train-list-pdb.txt); do awk -F',' '{print $13 "\t" $15 "\t" $17}' $i-res.txt > $i-all_eta.txt;done;
+  ```
+6/ Distribution
 
 
 
