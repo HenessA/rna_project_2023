@@ -6,7 +6,7 @@ This repository contains all the script and command lines used to do this projec
 
 The different steps of this project was:
 
-* 1/ prediction of the true torsion of angle and pseudo angle from a pdb file using dssr_wrapper.py script (selection of chain A only in multi-stranded RNA)
+* 1/ prediction of the true torsion of angle and pseudo angle from a pdb file using dssr_wrapper.py script (selection of chain A only in multi-stranded RNA) ( from 191 pdb file after the dssr: 164 pdb file with a chain A)
 
 * 2/ distribution of pseudo torsion angle of eta, eta' and eta '' using the output of dssr in a R script to see the values of the angles
 
@@ -16,7 +16,7 @@ The different steps of this project was:
 
 * 5/ Concatenation of all value of angles and base to make a distribution
 
-* 6/
+* 6/ Downloading the fasta file of the pdb
 
 
 
