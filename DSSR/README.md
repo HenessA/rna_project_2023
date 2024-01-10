@@ -21,9 +21,15 @@
   ```
 6/ Concatenation of all the etha value to vizualize the distribution in R with the script  `train_make_file_all_eta.py`
 
-7/ Distribution
+7/ Distribution of the etha, eta', eta'' of the training dataset 
 
-![image](https://github.com/HenessA/rna_project_2023/assets/105880255/83a153be-ba98-49c0-ab3b-86da05ca21ca)
+![image](https://github.com/HenessA/rna_project_2023/assets/105880255/61f3e23c-27fe-422e-a1c4-d483dd25c9dc)
+
+
+![image](https://github.com/HenessA/rna_project_2023/assets/105880255/0323da36-4c16-48f6-a31e-a02989ff0748)
+
+
+![image](https://github.com/HenessA/rna_project_2023/assets/105880255/5fbbac23-9b62-4ebf-8818-124812d6500d)
 
 
 
