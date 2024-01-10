@@ -23,6 +23,9 @@
 
 7/ Distribution
 
+![image](https://github.com/HenessA/rna_project_2023/assets/105880255/83a153be-ba98-49c0-ab3b-86da05ca21ca)
+
+
 
 
 
