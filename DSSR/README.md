@@ -5,13 +5,18 @@
 
 2/ Run the script select_chainA.py
 
-3/ Launch the  `train_dssr_calcul.py` then `test_dssr_calcul.py`
+3/Removal of empty pdbfile (whose don't contain chain A) with bash command line
 
-4/ Extraction of the angles to make the distribution
-
-
-###### bash command to remove the empty pdb file (whose don't contain chain A)
-
-  ```markdown
+ ```markdown
   $ find . -type f -size 0 -delete
   ```
+
+
+4/ Launch the  `train_dssr_calcul.py` then `test_dssr_calcul.py`
+
+5/ Extraction of the angles to make the distribution
+
+
+
+
+ 
