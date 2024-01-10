@@ -5,7 +5,7 @@
 
 2/ Run the script select_chainA.py
 
-3/Removal of empty pdbfile (whose don't contain chain A) with bash command line
+3/ Removal of empty pdbfile (whose don't contain chain A) with bash command line
 
  ```markdown
   $ find . -type f -size 0 -delete
