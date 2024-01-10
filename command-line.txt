@@ -1,1 +1,0 @@
-python -m src.dssr_wrapper --input_path /Users/henes/Desktop/rna_project_2023/rna_angles_prediction_dssr/data/rp10.pdb --output_path /Users/henes/Desktop/rna_project_2023/rna_angles_prediction_dssr/output1 --to_csv\
