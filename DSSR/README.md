@@ -1,4 +1,4 @@
-# DDSR step
+# DDSR 
 
 
 1/ Download the [dssr](https://github.com/EvryRNA/rna_angles_prediction_dssr/tree/main) folder from the github link + download the pdb file
