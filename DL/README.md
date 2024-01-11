@@ -1,4 +1,4 @@
-# Deep Learning - Model of pseudo torsion eta'' angle prediction
+# Deep Learning - Model of pseudo torsion **&eta;''** angles prediction
 
 The first strep of the DL part was to process the data to get  X_train,X_test, y_train, y_test:
 
@@ -17,12 +17,14 @@ cat *.fa > train-multi.fa
 ```markdown
 grep -A 1 'Chain A' train-multi.fa > new_train_multi.fa
 ```
+4/ Padding of the sequences to have a matrices with the same size for all sequences
 
+5/ Encoding with ONE HOT encoding:
+ A: 1 0 0 0
+ U: 0 1 0 0
+ G: 0 0 1 0
+ C: 0 0 0 1  
+ N (one base among AUGC): 0 0 0 0
+ X (fictiv nt for the padding): 0 0 0 0 
 
-
-#(fill according to the colab file)
-Padding step : 
-
-ONE HOT ENCODING step : 
-
-MLP :
+6/ Construction of the MLP using the script `model_prediction_angles.py`
