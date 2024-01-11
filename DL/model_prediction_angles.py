@@ -1,3 +1,4 @@
+#importation of the librairies
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,7 +18,7 @@ os.chdir('drive/My Drive/prediction_angles_project/') # directory of your choice
 !ls
 
 #PADDING of the training set
-def completer_sequences(fichier_entree, fichier_sortie, longueur_voulue):
+def complete_sequences(fichier_entree, fichier_sortie, longueur_voulue):
     with open(fichier_entree, "r") as entree:
         lignes = entree.readlines()
 
@@ -39,50 +40,50 @@ def completer_sequences(fichier_entree, fichier_sortie, longueur_voulue):
                 sortie.write(sequence + "\n")  # Écrire la séquence ajustée
 
 # Use of the function to get the padding file of the multi fasta provided
-completer_sequences("train-multi.fa", "train-padding", 417)
+complete_sequences("train-multi.fa", "train-padding", 417)
 
 fasta_file = "train-padding"
 !head train-padding
 
 
-# ONE HOT ENCODING of the training set 
-# Function to read the fasta file and get the sequences
+#ONE HOT ENCODING of the training set 
+#Function to read the fasta file and get the sequences
 def read_fasta(file_path):
     sequences = []
     for record in SeqIO.parse(file_path, "fasta"):
         sequences.append(str(record.seq))
     return sequences
 
-# Charger les étiquettes du fichier Y_train.txt
+#Load the labels of the file Y_train.txt
 with open("Y_train.txt", 'r') as file:
     train_label = file.read()
 
 train_label = train_label.replace("NA", "19")
 
-# Charger les séquences et encoder
+#Load data and encoding
 fasta_file = "train-padding"
 sequences = read_fasta(fasta_file)
 
-# Encoding the sequence into a matrix with 4 columns AUGC
+#Encoding the sequence into a matrix with 4 columns AUGC
 def encode_sequence(sequence):
     encoding = {'A': [1, 0, 0, 0], 'U': [0, 1, 0, 0], 'G': [0, 0, 1, 0], 'C': [0, 0, 0, 1], 'X': [0, 0, 0, 0], 'N': [0, 0, 0, 0]}
     encoded_sequence = [encoding[nucleotide] for nucleotide in sequence]
     return np.array(encoded_sequence)
 
-# Encode sequences
+#Encode sequences
 train_encoded = np.array([encode_sequence(seq) for seq in sequences])
 
-# Encoder les étiquettes
+#Encode the labels
 label_encoder = LabelEncoder()
 train_label_encoded = label_encoder.fit_transform(list(train_label))
 
-# Assurez-vous que les données sont de type float
+# Make sure that the labels are float
 X_train = train_encoded.astype(float)
 len(X_train)
 X_train
 
 #PADDING and ONE HOT ENCODING of test set
-def completer_sequences(fichier_entree, fichier_sortie, longueur_voulue):
+def complete_sequences(fichier_entree, fichier_sortie, longueur_voulue):
     with open(fichier_entree, "r") as entree:
         lignes = entree.readlines()
 
@@ -103,8 +104,8 @@ def completer_sequences(fichier_entree, fichier_sortie, longueur_voulue):
 
                 sortie.write(sequence + "\n")  # Écrire la séquence ajustée
 
-# Appel de la fonction pour ajuster la longueur de chaque séquence à 417
-completer_sequences("test-multi.fa", "test-padding", 417)
+#Function call to adjust the length of each sequence to 417 base
+complete_sequences("test-multi.fa", "test-padding", 417)
 
 !head test-padding
 
@@ -150,66 +151,69 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import mean_squared_error
 
-# Charger les étiquettes du fichier Y_test.txt
+# Load the labels of the file Y_test.txt
 with open("Y_test.txt", 'r') as file:
     test_label = file.read()
 
 test_label = test_label.replace("NA", "19")
 
-# Charger les étiquettes du fichier Y_train.txt
+# Load the labels of the file Y_train.txt
+Charger les étiquettes du fichier Y_train.txt
 with open("Y_train.txt", 'r') as file:
     train_label = file.read()
 
 train_label = train_label.replace("NA", "19")
 
-# Séparer les caractéristiques (X) et les étiquettes (y) pour l'entraînement
+# Separation of the input (sequence X) from the labels (angles Y) for the training
 X_train = train_encoded
 y_train = train_label
 
-# Séparer les caractéristiques (X) et les étiquettes (y) pour le test
+
+# Separation of the input (sequence X) from the labels (angles Y) for the test
 X_test = test_encoded
 y_test = test_label
 
 y_train_list = list(y_train)
 
-# Assurez-vous que les données sont de type float
+# Make sure that the data are float
 X_train_flat = np.array([seq.flatten() for seq in X_train]).astype(float)
 
-# Initialiser le scaler
+# Initialization of the scaler
 scaler = StandardScaler()
 
-# Standardiser les données d'entraînement
+# Standardization the trainninf set
 X_train_scaled = scaler.fit_transform(X_train_flat)
 
-# Encoder les étiquettes
+# Encoding of the labels
 label_encoder = LabelEncoder()
 train_label_encoded = label_encoder.fit_transform(y_train_list)
 
-# Assurez-vous que les données sont de type float
+# Make sure that the data are float type
 X_train = np.array(X_train).astype(float)
 X_test = np.array(X_test).astype(float)
 
-# Initialiser le scaler
+# Initialization of the scaler
 scaler = StandardScaler()
 
-# Standardiser les données d'entraînement
+# Standardization of the trainninf dataset
 X_train_scaled = scaler.fit_transform(X_train)
 
-# Standardiser les données de test en utilisant le scaler ajusté sur les données d'entraînement
+# Standardiaztion of the test dataset using the scaler adjust in the training dataset
 X_test_scaled = scaler.transform(X_test)
 
-# Créer et initialiser le modèle MLP
+# Create and initialize the MLP model
 mlp_model = MLPRegressor(hidden_layer_sizes=(100, 50), max_iter=500, random_state=42)
 
-# Ajuster le modèle sur les données d'entraînement
+# Adjust the model on the trainning dataset
 mlp_model.fit(X_train_scaled, train_label_encoded)
 
-# Faire des prédictions sur l'ensemble de test
+# Make prediction in all the test tdataset
+
 y_pred_test = mlp_model.predict(X_test_scaled)
 
-# Encoder les étiquettes du jeu de test
+# Encode the labels of the test dataset
 test_label_encoded = label_encoder.transform(y_test)
 
-# Calculer l'erreur quadratique moyenne (MSE) sur l'ensemble de test
+# Compute the MSE on all the test MSE
 mse_test = mean_squared_error(test_label_encoded, y_pred_test)
 print(f'Mean Squared Error on Test Set: {mse_test}')
