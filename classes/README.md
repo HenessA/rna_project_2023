@@ -117,6 +117,10 @@ echo "]" >> Y_train.txt
 ```
 
 6/ Distribution of the 21 classes of eta'' angles in R using `distribution_eta_21class.R`
+
+![image](https://github.com/HenessA/rna_project_2023/assets/94346915/d2fbd9ab-5ec1-450f-80bf-fba00f656ba8)
+
+
     
      
 
