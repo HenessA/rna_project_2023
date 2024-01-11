@@ -6,9 +6,10 @@ This repository contains all the script and command lines used to do this projec
 
 The different steps of this project was :
 
-* 1/  `DSSR` : prediction of the true torsion of angle and pseudo angle from a pdb file using dssr_wrapper.py script (selection of chain A only in multi-stranded RNA) and a python script dssr_calcul.py( from 191 pdb file after the dssr: 164 pdb file with a chain A)
+ 1/  `DSSR` : prediction of the true torsion of angle and pseudo angle from a pdb file using dssr_wrapper.py script (selection of chain A only in multi-stranded RNA) and a python script dssr_calcul.py( from 191 pdb file after the dssr: 164 pdb file with a chain A), distribution of eta, eta', eta'' in R
 
-* 2/ Distribution of pseudo torsion angle of eta, eta' and eta '' using the output of DSSR in a R script to see the values of the angles
+ 2/ `classes` : replace the continious values of eta'' by the class $$\in$$ {0..20}
+* Distribution of pseudo torsion angle of eta, eta' and eta '' using the output of DSSR in a R script to see the values of the angles
 
 * 3/ Define class for value of angles
 
