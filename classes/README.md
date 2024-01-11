@@ -107,7 +107,11 @@ for file in *.txt; do
     echo -n "," >> Y_train.txt
 done
 ```
-
+     ### add the final "]" 
+     
+```markdown
+echo "]" >> Y_train.txt
+```
     
      
 
