@@ -33,11 +33,6 @@ echo "Nombre de lignes : $max_lignes"
 ```
 
 
-
-
-
-
-```
 4/ Knowing the maximum length, add "X" to the other shortest sequences( length<387) to get uniform lengths 
 
 ```markdown
