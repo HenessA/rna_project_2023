@@ -1,6 +1,6 @@
 # Discretisation of angles 
 
-The aim of this step is to associate a class  beyond the 21 class (defined by the previous distribution graph) to each values of torsion angles of eta''. 
+Goal : associate a class  beyond the 21 class (defined by the previous distribution graph) to each values of torsion angles of eta''. 
 
 1/ Select the sequence $col19 and the eta'' values with awk command
 ```markdown
