@@ -90,7 +90,7 @@ done
    * the file contains all the class of angle of each sequence of the training set
 
 
-    ** create a list of the first col with the class of angle for each file **
+    **create a list of the first col with the class of angle for each file**
 ```markdown
 for i in $(cat train-list-pdb.txt); do awk '{printf "%s,", $1} END {printf "\n"}' ${i}_eta_second_seq_C.txt | sed 's/,$//' | awk '{print "[" $0 "]" }' > ../vect/${i}_eta_for_y_train.txt; done;
 ```
