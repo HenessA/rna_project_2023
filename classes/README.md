@@ -102,7 +102,7 @@ _creation of the concatenate file (Y_train.txt) with initial "[" and "]"_
 ```markdown
 echo -n "[" > Y_train.txt
 ```
-     ### concatenation of all the file ending with ".txt"
+_concatenation of all the file ending with ".txt"_
      
 ```markdown
 for file in *.txt; do
@@ -110,7 +110,7 @@ for file in *.txt; do
     echo -n "," >> Y_train.txt
 done
 ```
-     ### add the final "]" 
+_add the final "]"_
      
 ```markdown
 echo "]" >> Y_train.txt
