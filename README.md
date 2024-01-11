@@ -13,16 +13,6 @@ The different steps of this project was :
  3/  `DL`: Deep learning part of the project=> get X_train, X_test, y_train, y_test from the previous step and  [RCSB PDB] data base (https://www.rcsb.org), padding, ONE HOT encoding, build MLP
 
  
- 
-
-* 3/ Define class for value of angles
-
-* 4/ Selection of the columns containning the sequence and the value of eta'' angles and replace the angle value by the class defined previously
-
-* 5/ Concatenation of all value of angles and base to make a distribution
-
-* 6/ Downloading the fasta file of the pdb
-
 
 
 
