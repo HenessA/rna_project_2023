@@ -1,6 +1,6 @@
-#Import the training dataset : 
-train.eta.concatene <- read.delim("~/Desktop/rna_project_bureau/rna_angles_prediction_dssr/train-dssr-res/train-eta-concatene.txt", header=FALSE)
-View(train.eta.concatene)
+#Import the dataset containing the 3 values of ETA angle : 
+train.eta.concatene <- read.delim("~/path/to/your/dataset/train-file.txt", header=FALSE)
+
 
 #Change the header of the columns : 
 colnames(train.eta.concatene)[1] <- "eta"
@@ -31,3 +31,10 @@ summary(train.eta.concatene$eta)
 summary(train.eta.concatene$eta1)
 summary(train.eta.concatene$eta2)
 
+
+#PLot the distribution of the class | Train set 
+train.fichier.concatene_20class <- read.delim("~/path/to/your/dataset/train-file-class.txt")
+View(train.fichier.concatene_20class)
+
+colnames(train.fichier.concatene_20class)[1] <- "class"
+colnames(train.fichier.concatene_20class)[2] <- "base"
