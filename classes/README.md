@@ -1,18 +1,19 @@
 # Discretisation of angles 
 
-Goal : associate a class  beyond the 21 class (defined by the previous distribution graph) to each values of torsion angles of eta''. 
+Goal : associate a class  beyond the 21 class (defined by the previous distribution graph) to each values of torsion angles of **eta''**. 
 
-1/ Select the sequence $col19 and the eta'' values with awk command
+1/ Select the sequence in the 19e colomn and the **eta''** values in the 17e colum with awk command : 
+
 ```markdown
 for i in $(cat train-list-pdb.txt); do awk -F',' '{print $17 "\t" $19}' ${i}-res.txt > ../header_train_21class/${i}_eta_second_seq_A.txt;done;
 ```
 
-2/ Remove the header of all the files with awk command
+2/ Remove the header of all the files with awk command : 
 
 ```markdown
 for i in $(cat train-list-pdb.txt); do awk 'NR>1' ${i}_eta_second_seq_A.txt > ../wc_header_train_binaire/${i}_eta_second_seq_B;done;
 ```
-3/ Find the file with the maximal length of the data set (train and test) to process the padding step (3IGI=>387nt)
+3/ Find the file with the maximal length of the data set (train and test) to process the padding step :
 
 ```markdown
 max_lignes=0
@@ -32,8 +33,7 @@ echo "Nombre de lignes : $max_lignes"
 
 ```
 
-
-4/ Knowing the maximum length, add "X" to the other shortest sequences( length<387) to get uniform lengths 
+4/ Knowing the maximum length, add "X" to the other shortest sequences( length<387) to get uniform lengths :
 
 ```markdown
 for fichier in $(cat train-list-pdb.txt); do
@@ -46,7 +46,7 @@ for fichier in $(cat train-list-pdb.txt); do
 done
 ```
 
-5/ Replace the first column by the class defined in the dssr step after the distribution
+5/ Replace the first column by the class defined in the dssr step after the distribution :
 
 ```markdown
 for i in $(cat train-list-pdb.txt); do
@@ -85,11 +85,9 @@ done
 
 ```
 
-6/ Build a list of list with the class of angles 
+6/ Build a list of list with the class of angles :
    * each list in the big list represents the angles of each base of one pdb sequence
    * the file contains all the class of angle of each sequence of the training set
-
-
 
 _create a list of the first col with the class of _angle_ for each file_
 
@@ -116,7 +114,7 @@ _add the final "]"_
 echo "]" >> Y_train.txt
 ```
 
-6/ Distribution of the 21 classes of eta'' angles in R using `distribution_eta_angles.R`
+6/ Distribution of the 21 classes of **eta''** angles in R using `distribution_eta_angles.R`.
 
 ![image](https://github.com/HenessA/rna_project_2023/assets/94346915/d2fbd9ab-5ec1-450f-80bf-fba00f656ba8)
 
