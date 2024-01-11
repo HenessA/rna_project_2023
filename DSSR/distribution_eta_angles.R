@@ -38,3 +38,15 @@ View(train.fichier.concatene_20class)
 
 colnames(train.fichier.concatene_20class)[1] <- "class"
 colnames(train.fichier.concatene_20class)[2] <- "base"
+
+tb_train <- table(train.fichier.concatene_20class$base,train.fichier.concatene_20class$class)
+tb_train
+labels <- rownames(tb_train)
+colors <- rainbow(length(labels))
+barplot(tb_train, beside = TRUE, legend=TRUE, col=colors)
+
+
+ barplot(tb_train, beside = TRUE, legend = TRUE, col = colors,
++ main = "Distribution of the class for the test set",
++ xlab = "Class",
++ ylab = "Frequency")
