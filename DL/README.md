@@ -12,7 +12,7 @@ y : the labels (corresponding to the classes already admitted)
 ```markdown
 cat *.fa > train-multi.fa
 ```
-3/ Get only the sequences from chain A (103 sequence in the final multifasta) to have the input fo the padding step for the trainning step
+3/ Get only the sequences from chain A (103 sequence in the final multifasta) to have the input fo the padding step for the trainning step in the file `new_train_multi.fa`
 
 ```markdown
 grep -A 1 'Chain A' train-multi.fa > new_train_multi.fa
