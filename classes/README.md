@@ -51,7 +51,7 @@ done
 ```markdown
 for i in $(cat train-list-pdb.txt); do
     awk 'BEGIN {FS = "\t"; OFS = "\t"} {
-        if ($1 == "PAD") { #if it's padding the class will be 20
+        if ($1 == "PAD") { #if it's padding (PAD) the class will be 20
             $1 = 20;
         } else if ($1 == "NA") { #if it's a NA the class will be 19
             $1 = 19;
