@@ -4,7 +4,7 @@ _by Henes AMROUCHE and Kamély LUMIÈRE_
 
 This repository contains all the script and command lines used to do this project, aimed to build a model which is able to predict the pseudo torsion angle etha second from a fasta file. Find all the README file corresponding to each step, in the corresponding folder.
 
-Pseudo torsion angle : **ETA**
+Pseudo torsion angle : *eta*
 
 The different steps of this project was :
 
