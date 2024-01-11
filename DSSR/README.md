@@ -28,7 +28,7 @@ python -m src.dssr_wrapper --input_path /path/to/the/folder/containing/pdb/file 
   ```
 6/ Concatenation of all the eta value in on file, to vizualize the distribution in RStudio with the script  `train_make_file_all_eta.py`
 
-7/ Distribution of the eta, eta', eta'' of the training dataset :
+7/ Distribution of the eta, eta', eta'' of the training dataset using `distribution_dssr_angles.R`
 
 ![image](https://github.com/HenessA/rna_project_2023/assets/105880255/61f3e23c-27fe-422e-a1c4-d483dd25c9dc)
 
