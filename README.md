@@ -12,7 +12,7 @@ The different steps of this project was :
 
  2/ `classes` : Define class from distribution plot,  replace the continious values of **eta''** by the class \in {0..20}, padding preparation to get the same lengths for each sequences (and make sure of the uniform dimension for the future matrix in DL part), distribution of the class for **eta''** angles to confirm the classification step.
 
- 3/  `DL`: Deep learning part of the project=> get X_train, X_test, y_train, y_test from the previous step and  [RCSB PDB](https://www.rcsb.org) data base, padding, ONE HOT encoding, build MLP
+ 3/  `DL`: Deep learning part of the project ; get X_train, X_test, y_train, y_test from the previous step and by downloading the fasta file (input of the model) on  [RCSB PDB](https://www.rcsb.org) database, padding, ONE HOT encoding, MLP (with training step, evaluation step). 
 
  
 
