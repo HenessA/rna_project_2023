@@ -58,6 +58,7 @@ for i in $(cat train-list-pdb.txt); do
         } else {
             val = $1 + 0;  # Convert the first column to a float
 
+            #all the condition for the float to assign them the right class
             if (val <= -170) $1 = 0;
             else if (val <= -160 && val > -170) $1 = 1;
             else if (val <= -150 && val > -160) $1 = 2;
