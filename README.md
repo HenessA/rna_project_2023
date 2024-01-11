@@ -10,7 +10,7 @@ The different steps of this project was :
 
  2/ `classes` : replace the continious values of eta'' by the class \in {0..20}, preparation of Y_train with the step of padding (add X to sequences with length <387nt), distribution of the class for eta'' angles
 
- 3/  `DL`: Deep learning part of the project=> get X_train, X_test, y_train, y_test from the previous step and  [RCSB PDB] (https://www.rcsb.org)data base, padding, ONE HOT encoding, build MLP
+ 3/  `DL`: Deep learning part of the project=> get X_train, X_test, y_train, y_test from the previous step and  [RCSB PDB](https://www.rcsb.org)data base, padding, ONE HOT encoding, build MLP
 
  
 
