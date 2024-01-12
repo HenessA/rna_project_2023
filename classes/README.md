@@ -25,7 +25,7 @@ for fichier in $(cat train-list-pdb.txt); do
     if [ "$nombre_lignes" -gt "$max_lignes" ]; then
         max_lignes=$nombre_lignes
         fichier_max="$fichier"
-    fi
+    
 done
 
 echo "Le fichier avec le plus grand nombre de lignes est : $fichier_max"
