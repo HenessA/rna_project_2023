@@ -42,7 +42,7 @@ for fichier in $(cat train-list-pdb.txt); do
     if [ "$nombre_lignes" -lt 387 ]; then
         lignes_manquantes=$((387 - nombre_lignes))
         printf "PAD\tX\n%.0s" $(seq "$lignes_manquantes") | "${fichier}_eta_second_seq_B.txt" >  "${fichier}_eta_second_seq_B_PAD.txt"
-    fi
+    
 done
 ```
 
