@@ -121,6 +121,8 @@ echo "]" >> Y_train.txt
 ![image](https://github.com/HenessA/rna_project_2023/assets/94346915/3359da89-b32f-4c32-84fa-aeb8489edd53)
 
 
+The python script `test-MAE.py` generate the mean of each classes and associate them to the real angle values. At the end we have a list of mean, to plot the distribution, but it must be changed to only get one mean ... to continue ... 
+
 
 
     
